@@ -1,36 +1,50 @@
-export default function Projects() {
-  const projects = [
-    {
-      name: "Jeu vidéo Pong 2D",
-      tech: "Java EE, Spring, JPA, Spring Security",
-      link: "https://github.com/regixx20",
-      desc: "Jeu multijoueur avec gestion des scores et authentification.",
-    },
-    {
-      name: "Plateforme de prise de rendez-vous",
-      tech: "Java Spring, REST API, Swagger",
-      link: "https://github.com/regixx20",
-      desc: "Application web style Doodle avec authentification et notifications.",
-    },
-  ];
+const projects = [
+  {
+    name: "Pulse Defender",
+    tech: ["Java", "Spring Boot", "PostgreSQL", "Docker"],
+    link: "https://github.com/regixx20",
+    description:
+      "Plateforme de supervision de menaces cyber qui centralise les alertes de plusieurs sondeurs et déclenche des workflows d&apos;investigation.",
+  },
+  {
+    name: "Agenda Connect",
+    tech: ["React", "TypeScript", "Node.js", "Kafka"],
+    link: "https://github.com/regixx20",
+    description:
+      "Application collaborative de prise de rendez-vous avec notifications temps réel et synchronisation multi-calendriers.",
+  },
+  {
+    name: "AI Log Helper",
+    tech: ["Python", "LangChain", "FastAPI", "OpenAI"],
+    link: "https://github.com/regixx20",
+    description:
+      "Assistant IA qui résume des logs complexes et propose des pistes d&apos;investigation à partir de scénarios de cybersécurité.",
+  },
+];
 
+export default function Projects() {
   return (
-    <div className="my-16">
-      <h2 className="text-2xl font-bold mb-6 text-center">🚀 Projets</h2>
-      <div className="grid md:grid-cols-2 gap-6">
-        {projects.map((p, i) => (
-          <div key={i} className="border p-4 rounded-lg shadow-md">
-            <h3 className="font-semibold text-lg">{p.name}</h3>
-            <p className="text-sm text-gray-500 mb-2">{p.tech}</p>
-            <p className="text-gray-700 mb-3">{p.desc}</p>
-            <a
-              href={p.link}
-              target="_blank"
-              className="text-blue-600 hover:underline"
-            >
-              Voir sur GitHub
-            </a>
-          </div>
+    <div className="projects">
+      <h2 className="section-title">Projets sélectionnés</h2>
+      <p className="section-subtitle">
+        Des applications concrètes qui illustrent ma capacité à passer de l&apos;idée au produit opérationnel.
+      </p>
+      <div className="projects__grid">
+        {projects.map((project) => (
+          <article key={project.name} className="projects__card">
+            <div className="projects__card-header">
+              <h3>{project.name}</h3>
+              <a href={project.link} target="_blank" rel="noreferrer">
+                Voir le code
+              </a>
+            </div>
+            <p>{project.description}</p>
+            <ul className="projects__tags">
+              {project.tech.map((stack) => (
+                <li key={stack}>{stack}</li>
+              ))}
+            </ul>
+          </article>
         ))}
       </div>
     </div>
