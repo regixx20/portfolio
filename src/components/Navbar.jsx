@@ -1,4 +1,4 @@
-export default function Navbar() {
+export default function Navbar({ activeSection = "profil" }) {
   return (
     <header className="navbar">
       <div>
