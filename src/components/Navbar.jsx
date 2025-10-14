@@ -1,13 +1,43 @@
-export default function Navbar() {
+export default function Navbar({ activeSection = "profil" }) {
   return (
-    <nav className="flex justify-between items-center bg-gray-900 text-white px-6 py-4 sticky top-0 z-10">
-      <h1 className="font-bold text-xl">Régix Mededji</h1>
-      <div className="flex gap-6">
-        <a href="#profil" className="hover:text-blue-400">Profil</a>
-        <a href="#experiences" className="hover:text-blue-400">Expériences</a>
-        <a href="#projets" className="hover:text-blue-400">Projets</a>
-        <a href="#contact" className="hover:text-blue-400">Contact</a>
+    <header className="navbar">
+      <div>
+        <p className="navbar__brand">Régix Mededji</p>
+        <p className="navbar__subtitle">Ingénieur logiciel & créateur de solutions cloud-native</p>
       </div>
-    </nav>
+      <nav aria-label="Navigation principale" className="navbar__links">
+        <a
+          className={activeSection === "profil" ? "is-active" : undefined}
+          aria-current={activeSection === "profil" ? "true" : undefined}
+          href="#profil"
+        >
+          Profil
+        </a>
+        <a
+          className={activeSection === "skills" ? "is-active" : undefined}
+          aria-current={activeSection === "skills" ? "true" : undefined}
+          href="#skills"
+        >
+          Compétences
+        </a>
+        <a
+          className={activeSection === "experiences" ? "is-active" : undefined}
+          aria-current={activeSection === "experiences" ? "true" : undefined}
+          href="#experiences"
+        >
+          Expériences
+        </a>
+        <a
+          className={activeSection === "projets" ? "is-active" : undefined}
+          aria-current={activeSection === "projets" ? "true" : undefined}
+          href="#projets"
+        >
+          Projets
+        </a>
+        <a className="navbar__cta" href="#contact">
+          Travaillons ensemble
+        </a>
+      </nav>
+    </header>
   );
 }
