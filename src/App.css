@@ -13,7 +13,6 @@
 
 .section {
   margin: 0 auto 5rem;
-  scroll-margin-top: clamp(5.5rem, 14vw, 8.5rem);
 }
 
 .section:last-of-type {
@@ -78,44 +77,12 @@
 
 .navbar__links a {
   color: rgba(255, 255, 255, 0.85);
-  display: inline-flex;
-  align-items: center;
-  position: relative;
   transition: color 0.2s ease;
-}
-
-.navbar__links a:not(.navbar__cta) {
-  padding-bottom: 0.25rem;
 }
 
 .navbar__links a:hover,
 .navbar__links a:focus {
   color: #fff;
-}
-
-.navbar__links a.is-active:not(.navbar__cta),
-.navbar__links a[aria-current="true"]:not(.navbar__cta) {
-  color: #38bdf8;
-  font-weight: 600;
-}
-
-.navbar__links a.is-active:not(.navbar__cta)::after,
-.navbar__links a[aria-current="true"]:not(.navbar__cta)::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.35rem;
-  width: 100%;
-  height: 2px;
-  border-radius: 999px;
-  background: #38bdf8;
-}
-
-.navbar__links a.is-active:not(.navbar__cta):hover,
-.navbar__links a.is-active:not(.navbar__cta):focus,
-.navbar__links a[aria-current="true"]:not(.navbar__cta):hover,
-.navbar__links a[aria-current="true"]:not(.navbar__cta):focus {
-  color: #38bdf8;
 }
 
 .navbar__cta {

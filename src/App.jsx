@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "./App.css";
 
 import Navbar from "./components/Navbar";
@@ -43,7 +42,7 @@ function App() {
 
   return (
     <div className="app-layout">
-      <Navbar activeSection={activeSection} />
+      <Navbar />
       <main className="app-main">
         <section id="profil" className="section"><Profile /></section>
         <section id="skills" className="section section--accent"><Skills /></section>
