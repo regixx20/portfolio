@@ -1,47 +1,83 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-const projects = [
-  {
-    id: "pong2d",
-    name: "Pong 2D",
-    tech: ["Java", "Swing"],
-    description: "Jeu vidéo Pong 2D composé de trois moteurs : physique, graphique et sonore.",
-    link: "https://github.com/regixx20",
-  },
-  {
-    id: "agenda-connect",
-    name: "Agenda Connect",
-    tech: ["React", "TypeScript", "Node.js", "Kafka"],
-    description: "Application collaborative de prise de rendez-vous avec notifications temps réel.",
-    link: "https://github.com/regixx20",
-  },
-  {
-    id: "ai-log-helper",
-    name: "AI Log Helper",
-    tech: ["Python", "LangChain", "FastAPI", "OpenAI"],
-    description: "Assistant IA qui résume des logs complexes et propose des pistes d'investigation.",
-    link: "https://github.com/regixx20",
-  },
-];
+import { projects } from "../data/projects";
 
 export default function ProjectDetail() {
+  const navigate = useNavigate();
   const { id } = useParams();
   const project = projects.find((p) => p.id === id);
 
-  if (!project) return <div>Projet introuvable.</div>;
+  if (!project) {
+    return (
+      <section className="project-detail">
+        <div className="project-detail__container">
+          <p className="project-detail__empty">Projet introuvable.</p>
+          <button
+            type="button"
+            className="project-detail__back"
+            onClick={() => navigate(-1)}
+          >
+            Retour
+          </button>
+        </div>
+      </section>
+    );
+  }
 
   return (
-    <div className="project-detail">
-      <h2>{project.name}</h2>
-      <p>{project.description}</p>
-      <ul>
-        {project.tech.map((tech) => (
-          <li key={tech}>{tech}</li>
-        ))}
-      </ul>
-      <a href={project.link} target="_blank" rel="noreferrer">
-        Voir le code sur GitHub
-      </a>
-    </div>
+    <section className="project-detail">
+      <div className="project-detail__container">
+        <button
+          type="button"
+          className="project-detail__back"
+          onClick={() => navigate(-1)}
+        >
+          ← Retour aux projets
+        </button>
+        <div className="project-detail__card">
+          <div className="project-detail__content">
+            <span className="project-detail__eyebrow">Projet</span>
+            <h1 className="project-detail__title">{project.name}</h1>
+            <p className="project-detail__description">{project.description}</p>
+            <ul className="project-detail__tech">
+              {project.tech.map((tech) => (
+                <li key={tech}>{tech}</li>
+              ))}
+            </ul>
+            <div className="project-detail__actions">
+              <a
+                href={project.liveUrl}
+                className="project-detail__cta project-detail__cta--primary"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Accéder au produit déployé
+              </a>
+              {project.repoUrl && (
+                <a
+                  href={project.repoUrl}
+                  className="project-detail__cta"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Voir le code source
+                </a>
+              )}
+            </div>
+          </div>
+          <div className="project-detail__media">
+            <div className="project-detail__video" role="group" aria-label={`Démo vidéo de ${project.name}`}>
+              <iframe
+                src={project.demoVideo}
+                title={`Démo ${project.name}`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
