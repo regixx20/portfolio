@@ -1,9 +1,9 @@
-export default function Navbar({ activeSection = "profil" }) {
+export default function Navbar() {
   return (
     <header className="navbar">
       <div>
         <p className="navbar__brand">Régix Mededji</p>
-        <p className="navbar__subtitle">Ingénieur logiciel & créateur de solutions cloud-native</p>
+        <p className="navbar__subtitle">Ingénieur logiciel et créateur de solutions informatiques</p>
       </div>
       <nav aria-label="Navigation principale" className="navbar__links">
         <a href="#profil">Profil</a>

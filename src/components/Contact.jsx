@@ -13,7 +13,7 @@ const socialLinks = [
 
 export default function Contact() {
   return (
-    <div className="contact">
+    <div id = "contact" className="contact">
       <h2 className="section-title">Restons en contact</h2>
       <p className="section-subtitle">
         Un projet, une opportunité ou simplement l&apos;envie d&apos;échanger ? J&apos;apprécie toujours discuter de

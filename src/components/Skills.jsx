@@ -4,12 +4,12 @@ const skills = [
     items: ["Java", "Spring Boot", "Python", "React", "Node.js"],
   },
   {
-    category: "Cloud & DevOps",
-    items: ["Docker", "Kubernetes", "CI/CD", "GitLab", "AWS"],
+    category: "DevOps",
+    items: ["Docker", "Kubernetes", "CI/CD", "GitLab"],
   },
   {
     category: "Data & IA",
-    items: ["LangChain", "PostgreSQL", "Kafka", "RabbitMQ", "TensorFlow"],
+    items: ["PostgreSQL", "MySQL", "LangChain", "LangGraph", "LLMs", "NLP", "RAG"],
   },
 ];
 

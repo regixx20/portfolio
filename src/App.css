@@ -108,6 +108,7 @@
   width: clamp(110px, 16vw, 140px);
   height: clamp(110px, 16vw, 140px);
   border-radius: 50%;
+  object-fit: cover;
   display: grid;
   place-items: center;
   font-weight: 700;
@@ -465,4 +466,14 @@
   .timeline__item {
     grid-template-columns: 25px 1fr;
   }
+}
+
+#projets, #experiences, #profil, #contact, #skills{
+  scroll-margin-top: 100px; /* Ajuste selon la hauteur de ta navbar */
+}
+
+.timeline__content ul {
+  list-style: disc inside;
+  margin-left: 0.5rem;
+  padding-left: 1rem;
 }

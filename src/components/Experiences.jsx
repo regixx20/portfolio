@@ -3,20 +3,21 @@ const experiences = [
     title: "Développeur Back-End Alternant",
     company: "Gatewatcher",
     date: "Oct. 2024 – Sep. 2025",
+    description: "Au cours de mon année en tant que développeur back-end Python chez Gatewatcher, une entreprise de cybersécurité à Paris, La Défense, j'ai pu participer au développement de solutions de remédiation à des incidents de cybersécurité en utilisation des IA agentiques.",
     achievements: [
-      "Conception d&apos;agents IA pour l&apos;analyse de menaces avec LangChain et intégration aux produits maison",
-      "Mise à disposition de microservices Python et Java packagés via Docker, Helm et GitLab CI/CD",
-      "Collaboration étroite avec les équipes produit pour cadrer et livrer des fonctionnalités en sprints Scrum",
+      "Développement Python et intégration API avec FastAPI dans des environnements CI/CD.",
+      "Conception d’agents IA avec LangChain et LangGraph.",
+      "Développement de microservices conteneurisés avec Docker.",
     ],
   },
   {
-    title: "Développeur Logiciel Stagiaire",
-    company: "Laboratoire LIS – Marseille",
-    date: "Avr. 2024 – Juil. 2024",
+    title: "Développeur Web Stagiaire",
+    company: "SEMWEE",
+    date: "Avr. 2022 – Jun. 2022",
     achievements: [
-      "Industrialisation d&apos;une plateforme de recherche en déployant Docker, Kubernetes et un monitoring centralisé",
-      "Développement de modules Spring Boot sécurisés et d&apos;interfaces React pour piloter l&apos;analyse scientifique",
-      "Mise en place d&apos;un pipeline GitLab CI/CD avec automatisation des tests, SonarQube et documentation API",
+      "Optimisation du site semwee.app.",
+      "Implémentation de caching serveur et correction de bugs front-end/back-end.",
+      "Environnement de développement sous Linux, méthodes Agiles, outils de versioning.",
     ],
   },
 ];
@@ -24,7 +25,7 @@ const experiences = [
 export default function Experiences() {
   return (
     <div className="timeline">
-      <h2 className="section-title">Expériences professionnelles</h2>
+      <h2 id="experiences" className="section-title">Expériences professionnelles</h2>
       <p className="section-subtitle">
         Chaque mission a renforcé ma capacité à concevoir des services fiables, documentés et observables.
       </p>
@@ -37,6 +38,7 @@ export default function Experiences() {
               <h3>
                 {experience.title} · <span>{experience.company}</span>
               </h3>
+              {experience.description}
               <ul>
                 {experience.achievements.map((achievement) => (
                   <li key={achievement}>{achievement}</li>

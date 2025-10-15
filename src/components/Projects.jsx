@@ -24,7 +24,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <div className="projects">
+    <div id="projets" className="projects">
       <h2 className="section-title">Projets sélectionnés</h2>
       <p className="section-subtitle">
         Des applications concrètes qui illustrent ma capacité à passer de l&apos;idée au produit opérationnel.
