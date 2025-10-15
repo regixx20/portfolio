@@ -1,24 +1,29 @@
+import { Link } from "react-router-dom";
+
 const projects = [
   {
-    name: "Pulse Defender",
-    tech: ["Java", "Spring Boot", "PostgreSQL", "Docker"],
+    id: "pong2d",
+    name: "Pong 2D",
+    tech: ["Java", "Swing"],
     link: "https://github.com/regixx20",
     description:
-      "Plateforme de supervision de menaces cyber qui centralise les alertes de plusieurs sondeurs et déclenche des workflows d&apos;investigation.",
+      "Jeu vidéo Pong 2D composé de trois moteurs : physique, graphique et sonore.",
   },
   {
+    id: "agenda-connect",
     name: "Agenda Connect",
     tech: ["React", "TypeScript", "Node.js", "Kafka"],
     link: "https://github.com/regixx20",
     description:
-      "Application collaborative de prise de rendez-vous avec notifications temps réel et synchronisation multi-calendriers.",
+      "Application collaborative de prise de rendez-vous avec notifications temps réel.",
   },
   {
+    id: "ai-log-helper",
     name: "AI Log Helper",
     tech: ["Python", "LangChain", "FastAPI", "OpenAI"],
     link: "https://github.com/regixx20",
     description:
-      "Assistant IA qui résume des logs complexes et propose des pistes d&apos;investigation à partir de scénarios de cybersécurité.",
+      "Assistant IA qui résume des logs complexes et propose des pistes d'investigation.",
   },
 ];
 
@@ -31,12 +36,14 @@ export default function Projects() {
       </p>
       <div className="projects__grid">
         {projects.map((project) => (
-          <article key={project.name} className="projects__card">
+          <Link
+            key={project.id}
+            className="projects__card"
+            to={`/projets/${project.id}`} // <-- redirection interne
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
             <div className="projects__card-header">
               <h3>{project.name}</h3>
-              <a href={project.link} target="_blank" rel="noreferrer">
-                Voir le code
-              </a>
             </div>
             <p>{project.description}</p>
             <ul className="projects__tags">
@@ -44,7 +51,7 @@ export default function Projects() {
                 <li key={stack}>{stack}</li>
               ))}
             </ul>
-          </article>
+          </Link>
         ))}
       </div>
     </div>

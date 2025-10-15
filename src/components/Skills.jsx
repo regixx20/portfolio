@@ -25,7 +25,7 @@ export default function Skills() {
         {skills.map((skill) => (
           <article key={skill.category} className="skills-card">
             <h3>{skill.category}</h3>
-            <ul>
+            <ul className="skills__list">
               {skill.items.map((item) => (
                 <li key={item}>{item}</li>
               ))}

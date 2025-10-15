@@ -2,12 +2,12 @@ const socialLinks = [
   {
     label: "GitHub",
     href: "https://github.com/regixx20",
-    description: "Code source, expérimentations et projets open-source",
+    description: "Projets et Expérimentations",
   },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/régix-mededji",
-    description: "Parcours professionnel, veille et échanges", 
+    description: "Parcours professionnel et échanges", 
   },
 ];
 

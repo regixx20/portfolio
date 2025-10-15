@@ -1,14 +1,16 @@
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Profile from "./components/Profile";
 import Skills from "./components/Skills";
 import Experiences from "./components/Experiences";
 import Projects from "./components/Projects";
+import ProjectDetail from "./pages/ProjectDetails";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-function App() {
+function Home() {
   return (
     <div className="app-layout">
       <Navbar />
@@ -21,6 +23,17 @@ function App() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projets/:id" element={<ProjectDetail />} />
+      </Routes>
+    </Router>
   );
 }
 
