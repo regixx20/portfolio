@@ -1,7 +1,7 @@
 export default function Profile() {
   return (
     <div id ="profil" className="hero">
-      <img className="hero__avatar" src="src/assets/photo_regix.jpg" alt="Photo de Régix Mededji" aria-hidden="true"/>
+      <img className="hero__avatar" src="/photo_regix.jpg" alt="Photo de Régix Mededji" aria-hidden="true"/>
       <div className="hero__content">
         <p className="hero__eyebrow">Software engineer</p>
         <h1>Je construis des applications sécurisées qui allient performance et expérience utilisateur.</h1>

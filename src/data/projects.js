@@ -3,7 +3,7 @@ export const projects = [
     id: "pong2d",
     name: "Jeu Pong 2D",
     tech: ["Java", "Swing"],
-    image: "src/assets/pong2d.png",
+    image: "pong2d.png",
     description:
       "Pong 2D est un jeu développé en Java reposant sur une architecture modulaire " +
       "composée de plusieurs moteurs : graphique, physique et sonore." +
