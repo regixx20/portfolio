@@ -20,7 +20,9 @@ export default function Projects() {
             <div className="projects__card-header">
               <h3>{project.name}</h3>
             </div>
-            <p>{project.description}</p>
+            <br />
+            <img id= "pong2d" src={project.image} alt={project.name} />
+            <br />
             <ul className="projects__tags">
               {project.tech.map((stack) => (
                 <li key={stack}>{stack}</li>

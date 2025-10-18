@@ -642,3 +642,13 @@
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 8px 32px -8px rgba(30,64,175,0.18);
 }
+
+#pong2d {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  height: auto;
+  margin:  auto;
+  display: block;
+}

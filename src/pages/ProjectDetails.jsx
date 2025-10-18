@@ -50,8 +50,9 @@ export default function ProjectDetail() {
                 className="project-detail__cta project-detail__cta--primary"
                 target="_blank"
                 rel="noreferrer"
+                download
               >
-                Accéder au produit déployé
+                Accéder au produit
               </a>
               {project.repoUrl && (
                 <a
