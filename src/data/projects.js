@@ -2,6 +2,8 @@ export const projects = [
   {
     id: "Huddle",
     name: "Huddle",
+    status: "updating",
+    statusLabel: "Mise à jour à venir",
     tech: ["Java", "Spring Boot", "React", "JavaScript"],
     simpleDescription: "Huddle est une application web de prise de rendez-vous collaborative, qui permet à plusieurs utilisateurs de proposer et choisir des créneaux communs pour organiser facilement des réunions ou événements.",
     description:
@@ -17,7 +19,7 @@ export const projects = [
     demoVideo: "https://www.youtube.com/embed/ajZbSm98W1k",
   },
   {
-    
+
     id: "pong2d",
     name: "Jeu Pong 2D",
     tech: ["Java", "Swing"],
@@ -39,6 +41,8 @@ export const projects = [
   {
     id: "RAG-Chatbot",
     name: "RAG Chatbot",
+    status: "updating",
+    statusLabel: "Update en cours",
     tech: ["Python", "LangGraph", "OpenAI", "React", "JavaScript"],
     simpleDescription: "Chatbot intelligent basé sur la technologie RAG (Retrieval-Augmented Generation), capable de répondre à des questions en s’appuyant sur des documents qu'on lui fournit.",
     description:
@@ -56,6 +60,8 @@ export const projects = [
   {
     id : "Lexiquiz",
     name: "Lexiquiz",
+    status: "updating",
+    statusLabel: "Mise à jour à venir",
     tech: ["NodeJs", "Express", "React", "JavaScript","IA", "OpenAI", "MongoDB"],
     simpleDescription: "Lexiquiz est une application web de quiz qui permet aux utilisateurs d'apprendre et de pratiquer des langues étrangères grâce à l'IA.",
     description: "Lexiquiz est une application web pédagogique conçue pour aider les utilisateurs à apprendre et pratiquer des langues étrangères. Le site propose" +
