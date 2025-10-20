@@ -23,6 +23,8 @@ export default function Projects() {
             <br />
             <img id= "pong2d" src={project.image} alt={project.name} />
             <br />
+            <p className="projects__description">{project.simpleDescription}</p>
+            <br />
             <ul className="projects__tags">
               {project.tech.map((stack) => (
                 <li key={stack}>{stack}</li>
