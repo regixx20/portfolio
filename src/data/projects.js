@@ -42,7 +42,7 @@ export const projects = [
     id: "RAG-Chatbot",
     name: "RAG Chatbot",
     status: "updating",
-    statusLabel: "Update en cours",
+    statusLabel: "Mise à jour à venir",
     tech: ["Python", "LangGraph", "OpenAI", "React", "JavaScript"],
     simpleDescription: "Chatbot intelligent basé sur la technologie RAG (Retrieval-Augmented Generation), capable de répondre à des questions en s’appuyant sur des documents qu'on lui fournit.",
     description:

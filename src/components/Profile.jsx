@@ -1,3 +1,4 @@
+import { Github } from "lucide-react";
 export default function Profile() {
   return (
     <div id ="profil" className="hero">
@@ -14,12 +15,19 @@ export default function Profile() {
         <br />
       
         <div className="hero__actions">
-          <a className="button" href="#projets">
-            Découvrir mes projets
-          </a>
-          <a className="button button--ghost" href="https://www.linkedin.com/in/régix-mededji" target="_blank" rel="noreferrer">
-            Connectons-nous
-          </a>
+        <a className="button" href="#projets">
+          Découvrir mes projets
+        </a>
+        <a
+          className="button button--github flex items-center gap-2"
+          href="https://github.com/regixx20"
+          target="_blank"
+          rel="noreferrer"
+        >
+            
+              <Github size={18} />
+              Github
+            </a>
         </div>
       </div>
     </div>

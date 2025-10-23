@@ -1,3 +1,7 @@
+html {
+  font-size: 12px;
+}
+
 .app-layout {
   display: flex;
   flex-direction: column;
@@ -763,3 +767,23 @@
   font-weight: 600;
 }
 
+.button.button--github {
+  background: #1b522b; /* vert GitHub */
+  color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 18px rgba(46,164,79,0.12);
+  transition: transform 120ms ease, background 120ms ease, box-shadow 120ms ease;
+}
+
+.button.button--github:hover,
+.button.button--github:focus {
+  background: #238636;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(35,134,54,0.16);
+}
+
+.button.button--github svg {
+  fill: currentColor;
+  margin-right: 0.45rem;
+  vertical-align: middle;
+}

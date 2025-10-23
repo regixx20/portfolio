@@ -5,7 +5,7 @@ import { projects } from "../data/projects";
 export default function Projects() {
   return (
     <div id="projets" className="projects">
-      <h2 className="section-title">Projets sélectionnés</h2>
+      <h2 className="section-title">Projets réalisés</h2>
       <p className="section-subtitle">
         Des applications concrètes qui illustrent ma capacité à passer de l&apos;idée au produit opérationnel.
       </p>
