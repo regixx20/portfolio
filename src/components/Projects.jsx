@@ -42,6 +42,7 @@ export default function Projects() {
                 </div>
               )}
               <p className="projects__description">{project.simpleDescription}</p>
+              
               <ul className="projects__tags">
                 {project.tech.map((stack) => (
                   <li key={stack}>{stack}</li>
