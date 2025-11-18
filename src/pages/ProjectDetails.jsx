@@ -77,21 +77,42 @@ export default function ProjectDetail() {
           </div>
           <div className="project-detail__media">
             {project.demoVideo ? (
-              <div className="project-detail__video" role="group" aria-label={`Démo vidéo de ${project.name}`}>
-                <iframe
-                  src={project.demoVideo}
-                  title={`Démo ${project.name}`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  loading="lazy"
-                />
+              <div
+                className="project-detail__video"
+                role="group"
+                aria-label={`Démo vidéo de ${project.name}`}
+              >
+                {project.demoVideo.endsWith(".mp4") ? (
+                  <video
+                    controls                    // affiche les boutons play/pause etc.
+                    preload="metadata"          // charge juste les infos, pas toute la vidéo
+                    playsInline                 // évite le plein écran forcé sur mobile
+                    poster={project.demoPoster} // image affichée avant lecture
+                    className="project-detail__video-player"
+                  >
+                    <source src={project.demoVideo} type="video/mp4" />
+                    Votre navigateur ne supporte pas la lecture vidéo.
+                  </video>
+                ) : (
+                  <iframe
+                    src={project.demoVideo}
+                    title={`Démo ${project.name}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                )}
               </div>
             ) : (
-              <div className="project-detail__media-placeholder" aria-hidden="true">
+              <div
+                className="project-detail__media-placeholder"
+                aria-hidden="true"
+              >
                 Démonstration en cours de préparation
               </div>
             )}
           </div>
+
         </div>
       </div>
     </section>

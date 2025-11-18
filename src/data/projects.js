@@ -1,3 +1,6 @@
+import pong2dDemo from "../assets/videos/demo_pong2d_mount.mp4";
+import pong2dImage from "../assets/videos/pong2d.png";
+
 export const projects = [
   {
     id: "Huddle",
@@ -36,7 +39,8 @@ export const projects = [
       " Et vous pouvez jouer avec les touches Z/S pour le joueur de gauche et les flèches Haut/Bas pour le joueur de droite.",
     liveUrl: "/pong2d.jar", 
     repoUrl: "https://github.com/regixx20/game_engine",
-    demoVideo: "https://www.youtube.com/embed/ItfNtm1g0Yg",
+    demoVideo: pong2dDemo,
+    demoImage: pong2dImage,
   },
   {
     id: "RAG-Chatbot",
