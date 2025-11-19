@@ -21,6 +21,9 @@ export default function Projects() {
             <>
               <div className="projects__card-header">
                 <h3>{project.name}</h3>
+                <br></br>
+                <br></br>
+                
                 {isUpdating && (
                   <span className="projects__status">{project.statusLabel ?? "Mise à jour à venir"}</span>
                 )}
