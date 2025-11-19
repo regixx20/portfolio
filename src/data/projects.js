@@ -45,18 +45,13 @@ export const projects = [
   {
     id: "RAG-Chatbot",
     name: "RAG Chatbot",
-    status: "updating",
-    statusLabel: "Mise à jour à venir",
-    tech: ["Python", "LangGraph", "OpenAI", "React", "JavaScript"],
+    // status: "updating",
+    // statusLabel: "Mise à jour à venir",
+    tech: ["Python", "LangChain", "OpenAI", "React", "JavaScript"],
     simpleDescription: "Chatbot intelligent basé sur la technologie RAG (Retrieval-Augmented Generation), capable de répondre à des questions en s’appuyant sur des documents qu'on lui fournit.",
     description:
-      "RAG Chatbot est une application web propulsée par un backend LangGraph et un front React, conçue pour offrir une expérience de conversation intelligente et contextuelle. Grâce à son architecture RAG (Retrieval-Augmented Generation), le chatbot comprend les questions de l’utilisateur et puise les réponses directement dans les documents qui lui ont été fournis (textes légaux, FAQ, guides techniques, etc.). Ce projet peut être utilisé dans plusieurs contextes : " +
-      "Assistant RH ou juridique : aide les employés à comprendre les politiques internes, contrats ou lois applicables.\n" +
-      "Support client : répond automatiquement aux questions fréquentes à partir de la documentation produit ou de la base de connaissances.\n" +
-      "Assistant technique interne : permet aux ingénieurs ou développeurs de retrouver rapidement des informations dans la documentation technique ou les rapports d’erreur." +
-      "Le front React offre une interface de chat fluide et moderne, affichant les réponses du modèle ainsi que les sources documentaires utilisées." +
-      "Les utilisateurs peuvent interagir en langage naturel, consulter les documents cités et, selon la configuration, uploader de nouveaux fichiers pour enrichir la base de connaissances." +
-      "Ce projet démontre comment combiner LLM + RAG + React pour créer un outil conversationnel utile, adaptable à différents contextes professionnels.",
+      "RAG Chatbot est une application full-stack combinant un backend Django + LangChain et un frontend React/Vite. Elle offre une expérience conversationnelle intelligente capable d’exploiter vos documents internes grâce à une architecture RAG (Retrieval-Augmented Generation)." +
+      "Le chatbot répond en s’appuyant soit sur une base documentaire indexée, soit directement via le modèle de langage en mode standard.",
     liveUrl: "https://github.com/regixx20",
     repoUrl: "https://github.com/regixx20",
     demoVideo: "",
