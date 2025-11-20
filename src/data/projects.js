@@ -52,7 +52,7 @@ export const projects = [
     description:
       "RAG Chatbot est une application full-stack combinant un backend Django + LangChain et un frontend React/Vite. Elle offre une expérience conversationnelle intelligente capable d’exploiter vos documents internes grâce à une architecture RAG (Retrieval-Augmented Generation)." +
       "Le chatbot répond en s’appuyant soit sur une base documentaire indexée, soit directement via le modèle de langage en mode standard.",
-    liveUrl: "https://github.com/regixx20",
+    liveUrl: "https://rag-chatbot-regixs-projects-754b2662.vercel.app/",
     repoUrl: "https://github.com/regixx20",
     demoVideo: "",
   },
