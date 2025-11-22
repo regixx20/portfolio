@@ -1,6 +1,7 @@
 import pong2dDemo from "../assets/videos/demo_pong2d_mount.mp4";
+import rag_chatbot_demo from "../assets/videos/rag_chatbot_demo.mp4";
 import pong2dImage from "../assets/videos/pong2d.png";
-
+import image_rag_chatbot from "../assets/videos/image_rag_chatbot.png";
 export const projects = [
   {
     id: "Huddle",
@@ -45,6 +46,7 @@ export const projects = [
   {
     id: "RAG-Chatbot",
     name: "RAG Chatbot",
+    image: image_rag_chatbot,
     // status: "updating",
     // statusLabel: "Mise à jour à venir",
     tech: ["Python", "LangChain", "OpenAI", "React", "JavaScript"],
@@ -53,8 +55,9 @@ export const projects = [
       "RAG Chatbot est une application full-stack combinant un backend Django + LangChain et un frontend React/Vite. Elle offre une expérience conversationnelle intelligente capable d’exploiter vos documents internes grâce à une architecture RAG (Retrieval-Augmented Generation)." +
       "Le chatbot répond en s’appuyant soit sur une base documentaire indexée, soit directement via le modèle de langage en mode standard.",
     liveUrl: "https://rag-chatbot-regixs-projects-754b2662.vercel.app/",
-    repoUrl: "https://github.com/regixx20",
-    demoVideo: "",
+    repoUrl: "https://github.com/regixx20/rag_chatbot",
+    demoVideo: rag_chatbot_demo,
+    demoImage: image_rag_chatbot,
   },
   {
     id : "Lexiquiz",
