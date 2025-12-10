@@ -6,9 +6,9 @@ export const projects = [
   {
     id: "Huddle",
     name: "Huddle",
-    status: "updating",
-    statusLabel: "Mise à jour à venir",
-    tech: ["Java", "Spring Boot", "React", "JavaScript"],
+    // status: "updating",
+    // statusLabel: "Mise à jour à venir",
+    tech: ["Java", "Spring Boot", "Hibernate", "AngularJS", "React"],
     simpleDescription: "Huddle est une application web de prise de rendez-vous collaborative, qui permet à plusieurs utilisateurs de proposer et choisir des créneaux communs pour organiser facilement des réunions ou événements.",
     description:
       "Huddle est une plateforme moderne de planification de rendez-vous, conçue pour simplifier la coordination entre plusieurs participants. Inspirée de Doodle, elle permet aux utilisateurs de : " +
