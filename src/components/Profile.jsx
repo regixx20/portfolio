@@ -7,8 +7,7 @@ export default function Profile() {
         <p className="hero__eyebrow">Software engineer</p>
         <h1>Je développe des applications backend sécurisées et performantes.</h1>
         <p className="hero__description">
-          Ingénieur logiciel backend – Java & Python
-Je conçois des APIs et services robustes, orientés performance, sécurité et qualité logicielle.
+          Ingénieur logiciel backend Java Python. Je conçois des APIs et services robustes, orientés performance, sécurité et qualité logicielle.
         </p>
         <br />
       
