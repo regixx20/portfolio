@@ -5,12 +5,9 @@ export default function Profile() {
       <img className="hero__avatar" src="/photo_regix.jpg" alt="Photo de Régix Mededji" aria-hidden="true"/>
       <div className="hero__content">
         <p className="hero__eyebrow">Software engineer</p>
-        <h1>Je construis des applications sécurisées qui allient performance et expérience utilisateur.</h1>
+        <h1>Je développe des applications backend sécurisées et performantes.</h1>
         <p className="hero__description">
-          Titulaire d'un master en Ingénierie du Développement Logiciel et passionné par l&apos;écosystème Java, Python et Javascript, j&apos;aime transformer des problèmes
-          complexes en produits concrets. Du backend Spring Boot Java ou Python aux interfaces React ou Angular, j&apos;orchestre des
-          solutions complètes en m&apos;appuyant sur des pratiques DevOps modernes. J'aime également exploiter l'IA générative pour
-          enrichir l'expérience des utilisateurs grâce à une approche agentique.
+          Ingénieur logiciel backend Java Python. Je conçois des APIs et services robustes, orientés performance, sécurité et qualité logicielle.
         </p>
         <br />
       
