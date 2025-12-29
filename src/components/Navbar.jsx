@@ -10,7 +10,7 @@ export default function Navbar() {
         <a href="#experiences">Expériences</a>
         <a href="#projets">Projets</a>
         <a className="navbar__cta" href="#contact">
-          Travaillons ensemble
+          Travaillons ensemble 
         </a>
       </nav>
     </header>
