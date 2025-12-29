@@ -15,7 +15,9 @@ function Home() {
     <div className="app-layout">
       <Navbar />
       <main className="app-main">
-        <section id="profil" className="section"><Profile /></section>
+        <section id="profil" className="section section--full-bleed">
+          <Profile />
+        </section>
         <section id="skills" className="section section--accent"><Skills /></section>
         <section id="experiences" className="section"><Experiences /></section>
         <section id="projets" className="section section--accent"><Projects /></section>
