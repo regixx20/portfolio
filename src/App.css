@@ -19,17 +19,6 @@ html {
   margin: 0 auto 5rem;
 }
 
-.section--full-bleed {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  margin-bottom: 5rem;
-}
-
-.section--full-bleed:last-of-type {
-  margin-bottom: 0;
-}
-
 .section:last-of-type {
   margin-bottom: 0;
 }
@@ -56,25 +45,20 @@ html {
 
 /* Navbar */
 .navbar {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  margin: 0;
-  padding: 1.1rem 0;
+  width: min(1100px, 92vw);
+  margin: 1.5rem auto 0;
+  padding: 1.25rem clamp(1rem, 2vw, 1.75rem);
   background: rgba(15, 23, 42, 0.95);
   color: #fff;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 16px 30px -24px rgba(0, 0, 0, 0.45);
-  z-index: 12;
-}
-
-.navbar__container {
-  width: min(1180px, 94vw);
-  margin: 0 auto;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
+  position: sticky;
+  top: 1rem;
+  backdrop-filter: blur(12px);
+  z-index: 10;
 }
 
 .navbar__brand {
@@ -115,27 +99,13 @@ html {
 
 /* Hero */
 .hero {
-  width: 100%;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92), rgba(59, 130, 246, 0.35)),
-    radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.35), transparent 45%),
-    radial-gradient(circle at 80% 10%, rgba(59, 130, 246, 0.3), transparent 40%);
-  color: #e2e8f0;
-  padding: clamp(3rem, 6vw, 5rem) 0;
-}
-
-.hero--full {
-  min-height: calc(100vh - 90px);
-  display: flex;
-  align-items: center;
-}
-
-.hero__layout {
-  width: min(1180px, 94vw);
-  margin: 0 auto;
   display: grid;
   gap: clamp(1.5rem, 4vw, 3rem);
-  grid-template-columns: minmax(0, 160px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 120px) minmax(0, 1fr);
   align-items: center;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(15, 23, 42, 0.05));
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.75rem, 3vw, 3.5rem);
+  border-radius: 32px;
 }
 
 .hero__avatar {
@@ -153,10 +123,10 @@ html {
 }
 
 .hero__content h1 {
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
-  line-height: 1.15;
-  margin: 0.6rem 0 1.1rem;
-  color: #f8fafc;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.2;
+  margin: 0.75rem 0 1.1rem;
+  color: #0f172a;
 }
 
 .hero__eyebrow {
@@ -168,9 +138,9 @@ html {
 }
 
 .hero__description {
-  color: #cbd5e1;
+  color: #334155;
   font-size: 1.05rem;
-  max-width: 62ch;
+  max-width: 65ch;
 }
 
 .hero__highlights {
@@ -750,7 +720,7 @@ html {
 }
 
 @media (max-width: 780px) {
-  .navbar__container {
+  .navbar {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -760,8 +730,16 @@ html {
     justify-content: flex-start;
   }
 
-  .hero__layout {
+  .hero {
     grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .hero__avatar {
+    margin: 0 auto;
+  }
+
+  .hero__content {
     text-align: left;
   }
 

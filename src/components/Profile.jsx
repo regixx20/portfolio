@@ -1,5 +1,4 @@
 import { Github } from "lucide-react";
-
 export default function Profile() {
   return (
     <div id ="profil" className="hero">
@@ -27,7 +26,6 @@ Je conçois des APIs et services robustes, orientés performance, sécurité et 
               <Github size={18} />
               Github
             </a>
-          </div>
         </div>
       </div>
     </div>
