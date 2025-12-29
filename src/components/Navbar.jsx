@@ -1,19 +1,8 @@
 export default function Navbar() {
   return (
     <header className="navbar">
-      <div className="navbar__container">
-        <div>
-          <p className="navbar__brand">Régix Mededji</p>
-        </div>
-        <nav aria-label="Navigation principale" className="navbar__links">
-          <a href="#profil">Profil</a>
-          <a href="#skills">Compétences</a>
-          <a href="#experiences">Expériences</a>
-          <a href="#projets">Projets</a>
-          <a className="navbar__cta" href="#contact">
-            Travaillons ensemble
-          </a>
-        </nav>
+      <div>
+        <p className="navbar__brand">Régix Mededji</p>
       </div>
     </header>
   );
