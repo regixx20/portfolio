@@ -1,33 +1,37 @@
 import { Github } from "lucide-react";
+
 export default function Profile() {
   return (
-    <div id ="profil" className="hero">
-      <img className="hero__avatar" src="/photo_regix.jpg" alt="Photo de Régix Mededji" aria-hidden="true"/>
-      <div className="hero__content">
-        <p className="hero__eyebrow">Software engineer</p>
-        <h1>Je construis des applications sécurisées qui allient performance et expérience utilisateur.</h1>
-        <p className="hero__description">
-          Titulaire d'un master en Ingénierie du Développement Logiciel et passionné par l&apos;écosystème Java, Python et Javascript, j&apos;aime transformer des problèmes
-          complexes en produits concrets. Du backend Spring Boot Java ou Python aux interfaces React ou Angular, j&apos;orchestre des
-          solutions complètes en m&apos;appuyant sur des pratiques DevOps modernes. J'aime également exploiter l'IA générative pour
-          enrichir l'expérience des utilisateurs grâce à une approche agentique.
-        </p>
-        <br />
-      
-        <div className="hero__actions">
-        <a className="button" href="#projets">
-          Découvrir mes projets
-        </a>
-        <a
-          className="button button--github flex items-center gap-2"
-          href="https://github.com/regixx20"
-          target="_blank"
-          rel="noreferrer"
-        >
-            
+    <div className="hero hero--full">
+      <div className="hero__layout">
+        <img
+          className="hero__avatar"
+          src="/photo_regix.jpg"
+          alt="Photo de Régix Mededji"
+          aria-hidden="true"
+        />
+        <div className="hero__content">
+          <p className="hero__eyebrow">Software engineer</p>
+          <h1>Je construis des applications fiables et élégantes.</h1>
+          <p className="hero__description">
+            Ingénieur logiciel fullstack, je conçois des backends robustes et des interfaces claires en m&apos;appuyant sur des
+            pratiques modernes de sécurité, de tests et de déploiement.
+          </p>
+
+          <div className="hero__actions">
+            <a className="button" href="#projets">
+              Découvrir mes projets
+            </a>
+            <a
+              className="button button--github flex items-center gap-2"
+              href="https://github.com/regixx20"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Github size={18} />
               Github
             </a>
+          </div>
         </div>
       </div>
     </div>
