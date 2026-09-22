@@ -1,35 +1,25 @@
-const socialLinks = [
-  {
-    label: "GitHub",
-    href: "https://github.com/regixx20",
-    description: "Projets et Expérimentations",
-  },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/régix-mededji",
-    description: "Parcours professionnel et échanges", 
-  },
-];
+import { email } from "../config";
+import { useScrollReveal } from "../hooks";
 
 export default function Contact() {
+  const revealRef = useScrollReveal();
+
   return (
-    <div id = "contact" className="contact">
-      <h2 className="section-title">Restons en contact</h2>
-      <p className="section-subtitle">
-        Un projet, une opportunité ou simplement l&apos;envie d&apos;échanger ? J&apos;apprécie toujours discuter de
-        technologies et de nouveaux défis.
+    <section id="contact" className="contact reveal" ref={revealRef}>
+      <h2 className="numbered-heading overline">Et maintenant ?</h2>
+
+      <h2 className="contact__title">Prenons contact</h2>
+
+      <p>
+        Je suis ouvert aux opportunités autour du développement backend et des
+        systèmes d&apos;IA appliqués. Que vous ayez un projet, une question ou
+        simplement l&apos;envie d&apos;échanger sur la tech, ma boîte mail est
+        toujours ouverte.
       </p>
-      <a className="contact__email" href="mailto:mededjiregix20@gmail.com">
-        mededjiregix20@gmail.com
+
+      <a className="big-button contact__cta" href={`mailto:${email}`}>
+        Dites bonjour
       </a>
-      <div className="contact__links">
-        {socialLinks.map((link) => (
-          <a key={link.href} href={link.href} target="_blank" rel="noreferrer" className="contact__card">
-            <span>{link.label}</span>
-            <p>{link.description}</p>
-          </a>
-        ))}
-      </div>
-    </div>
+    </section>
   );
 }
