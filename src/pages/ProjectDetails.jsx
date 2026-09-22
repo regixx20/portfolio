@@ -1,120 +1,116 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { Github, ExternalLink, Download } from "lucide-react";
 
 import { projects } from "../data/projects";
 
 export default function ProjectDetail() {
-  const navigate = useNavigate();
   const { id } = useParams();
   const project = projects.find((p) => p.id === id);
-  const isUpdating = Boolean(project?.status);
-  const statusLabel = project?.statusLabel ?? "Mise à jour à venir";
 
   if (!project) {
     return (
       <section className="project-detail">
-        <div className="project-detail__container">
-          <p className="project-detail__empty">Projet introuvable.</p>
-          <button
-            type="button"
-            className="project-detail__back"
-            onClick={() => navigate(-1)}
-          >
-            Retour
-          </button>
-        </div>
+        <h1 className="project-detail__title">Projet introuvable</h1>
+        <p className="project-detail__description">
+          Ce projet n&apos;existe pas ou a été déplacé.
+        </p>
+        <Link to="/" className="big-button">
+          Retour à l&apos;accueil
+        </Link>
       </section>
     );
   }
 
+  const isUpdating = Boolean(project.status);
+  const isDownload = project.liveUrl?.startsWith("/");
+  const isVideoFile = project.demoVideo?.endsWith(".mp4");
+
   return (
     <section className="project-detail">
-      <div className="project-detail__container">
-        <button
-          type="button"
-          className="project-detail__back"
-          onClick={() => navigate(-1)}
-        >
-          ← Retour aux projets
-        </button>
-        <div className={`project-detail__card${isUpdating ? " project-detail__card--updating" : ""}`}>
-          <div className="project-detail__content">
-            <span className="project-detail__eyebrow">Projet</span>
-            <h1 className="project-detail__title">{project.name}</h1>
-            {isUpdating && <span className="project-detail__status">{statusLabel}</span>}
-            <p className="project-detail__description">{project.description}</p>
-            <ul className="project-detail__tech">
-              {project.tech.map((tech) => (
-                <li key={tech}>{tech}</li>
-              ))}
-            </ul>
-            {isUpdating ? (
-              <p className="project-detail__status-note">
-                Ce projet est actuellement en cours de mise à jour. Revenez bientôt pour découvrir les dernières améliorations.
-              </p>
-            ) : (
-              <div className="project-detail__actions">
-                <a
-                  href={project.liveUrl}
-                  className="project-detail__cta project-detail__cta--primary"
-                  target="_blank"
-                  rel="noreferrer"
-                  download
-                >
-                  Accéder au produit
-                </a>
-                {project.repoUrl && (
-                  <a
-                    href={project.repoUrl}
-                    className="project-detail__cta"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Voir le code source
-                  </a>
-                )}
-              </div>
-            )}
-          </div>
-          <div className="project-detail__media">
-            {project.demoVideo ? (
-              <div
-                className="project-detail__video"
-                role="group"
-                aria-label={`Démo vidéo de ${project.name}`}
-              >
-                {project.demoVideo.endsWith(".mp4") ? (
-                  <video
-                    controls                    // affiche les boutons play/pause etc.
-                    preload="metadata"          // charge juste les infos, pas toute la vidéo
-                    playsInline                 // évite le plein écran forcé sur mobile
-                    poster={project.demoPoster} // image affichée avant lecture
-                    className="project-detail__video-player"
-                  >
-                    <source src={project.demoVideo} type="video/mp4" />
-                    Votre navigateur ne supporte pas la lecture vidéo.
-                  </video>
-                ) : (
-                  <iframe
-                    src={project.demoVideo}
-                    title={`Démo ${project.name}`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    loading="lazy"
-                  />
-                )}
-              </div>
-            ) : (
-              <div
-                className="project-detail__media-placeholder"
-                aria-hidden="true"
-              >
-                Démonstration en cours de préparation
-              </div>
-            )}
-          </div>
-
-        </div>
+      <div className="breadcrumb">
+        <Link to="/#projects" className="inline-link">
+          &larr; Tous les projets
+        </Link>
       </div>
+
+      <p className="overline">Projet</p>
+      <h1 className="project-detail__title">{project.name}</h1>
+
+      {isUpdating && (
+        <span className="featured__badge">
+          {project.statusLabel ?? "Mise à jour à venir"}
+        </span>
+      )}
+
+      <ul className="project-detail__tech">
+        {project.tech.map((tech) => (
+          <li key={tech}>{tech}</li>
+        ))}
+      </ul>
+
+      <p className="project-detail__description">{project.description}</p>
+
+      {isUpdating ? (
+        <p className="subtitle">
+          Ce projet est en cours de mise à jour. Revenez bientôt pour découvrir
+          les dernières améliorations.
+        </p>
+      ) : (
+        <div className="project-detail__links">
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              className="big-button"
+              target="_blank"
+              rel="noreferrer"
+              {...(isDownload ? { download: true } : {})}
+            >
+              {isDownload ? (
+                <Download size={16} style={{ verticalAlign: "-2px", marginRight: 8, width: 16 }} />
+              ) : (
+                <ExternalLink size={16} style={{ verticalAlign: "-2px", marginRight: 8, width: 16 }} />
+              )}
+              {isDownload ? "Télécharger" : "Voir en ligne"}
+            </a>
+          )}
+          {project.repoUrl && (
+            <a
+              href={project.repoUrl}
+              className="big-button"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Github size={16} style={{ verticalAlign: "-2px", marginRight: 8, width: 16 }} />
+              Code source
+            </a>
+          )}
+        </div>
+      )}
+
+      {project.demoVideo && (
+        <div className="project-detail__media">
+          {isVideoFile ? (
+            <video
+              controls
+              preload="metadata"
+              playsInline
+              poster={project.demoImage}
+              aria-label={`Démo vidéo de ${project.name}`}
+            >
+              <source src={project.demoVideo} type="video/mp4" />
+              Votre navigateur ne supporte pas la lecture vidéo.
+            </video>
+          ) : (
+            <iframe
+              src={project.demoVideo}
+              title={`Démo ${project.name}`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              loading="lazy"
+            />
+          )}
+        </div>
+      )}
     </section>
   );
 }
