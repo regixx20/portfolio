@@ -1,11 +1,14 @@
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Github, ExternalLink, Download } from "lucide-react";
+import { Github, ExternalLink, Download, Play } from "lucide-react";
 
 import { projects } from "../data/projects";
+import PlayModal from "../components/PlayModal";
 
 export default function ProjectDetail() {
   const { id } = useParams();
   const project = projects.find((p) => p.id === id);
+  const [playing, setPlaying] = useState(false);
 
   if (!project) {
     return (
@@ -33,7 +36,7 @@ export default function ProjectDetail() {
         </Link>
       </div>
 
-      <p className="overline">Projet</p>
+      <p className="overline">Projet{project.year && ` · ${project.year}`}</p>
       <h1 className="project-detail__title">{project.name}</h1>
 
       {isUpdating && (
@@ -57,6 +60,12 @@ export default function ProjectDetail() {
         </p>
       ) : (
         <div className="project-detail__links">
+          {project.playable && (
+            <button type="button" className="big-button" onClick={() => setPlaying(true)}>
+              <Play size={16} style={{ verticalAlign: "-2px", marginRight: 8, width: 16 }} />
+              Jouer dans le navigateur
+            </button>
+          )}
           {project.liveUrl && (
             <a
               href={project.liveUrl}
@@ -110,6 +119,10 @@ export default function ProjectDetail() {
             />
           )}
         </div>
+      )}
+
+      {project.playable && (
+        <PlayModal open={playing} onClose={() => setPlaying(false)} title={`Jouer à ${project.name}`} />
       )}
     </section>
   );
