@@ -1,13 +1,16 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Play } from "lucide-react";
 import { projects } from "../data/projects";
 import { useScrollReveal } from "../hooks";
+import PlayModal from "./PlayModal";
 
 function FeaturedItem({ project, index }) {
   const revealRef = useScrollReveal(index * 100);
   const isUpdating = Boolean(project.status);
   const cover = project.demoImage ?? project.image;
   const detailUrl = `/projets/${project.id}`;
+  const [playing, setPlaying] = useState(false);
 
   const title = isUpdating ? (
     <span>{project.name}</span>
@@ -18,7 +21,9 @@ function FeaturedItem({ project, index }) {
   return (
     <li className="featured__item reveal" ref={revealRef}>
       <div className="featured__content">
-        <p className="featured__overline">Projet</p>
+        <p className="featured__overline">
+          Projet{project.year && ` · ${project.year}`}
+        </p>
 
         <h3 className="featured__title">
           {title}
@@ -45,6 +50,17 @@ function FeaturedItem({ project, index }) {
               En savoir plus
             </Link>
           )}
+          {project.playable && (
+            <button
+              type="button"
+              className="featured__link-button"
+              onClick={() => setPlaying(true)}
+              aria-label={`Jouer à ${project.name}`}
+              title="Jouer dans le navigateur"
+            >
+              <Play size={20} />
+            </button>
+          )}
           {project.repoUrl && (
             <a
               href={project.repoUrl}
@@ -69,8 +85,21 @@ function FeaturedItem({ project, index }) {
       </div>
 
       <div className="featured__image">
-        {cover ? (
+        {cover && project.playable ? (
+          <button
+            type="button"
+            className="featured__cover featured__cover--playable"
+            onClick={() => setPlaying(true)}
+            aria-label={`Jouer à ${project.name}`}
+          >
+            <img src={cover} alt={`Aperçu du projet ${project.name}`} loading="lazy" />
+            <span className="featured__play">
+              <Play size={18} /> Jouer
+            </span>
+          </button>
+        ) : cover ? (
           <a
+            className="featured__cover"
             href={project.liveUrl ?? project.repoUrl ?? "#"}
             target="_blank"
             rel="noreferrer"
@@ -82,6 +111,10 @@ function FeaturedItem({ project, index }) {
           <div className="featured__placeholder">Aperçu à venir</div>
         )}
       </div>
+
+      {project.playable && (
+        <PlayModal open={playing} onClose={() => setPlaying(false)} title={`Jouer à ${project.name}`} />
+      )}
     </li>
   );
 }
