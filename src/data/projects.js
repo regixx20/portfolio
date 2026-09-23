@@ -26,6 +26,7 @@ export const projects = [
 
     id: "pong2d",
     name: "Jeu Pong 2D",
+    year: 2021,
     tech: ["Java", "Swing"],
     image: "pong2d.png",
     simpleDescription: 
@@ -42,6 +43,7 @@ export const projects = [
     repoUrl: "https://github.com/regixx20/game_engine",
     demoVideo: pong2dDemo,
     demoImage: pong2dImage,
+    playable: true,
   },
   {
     id: "RAG-Chatbot",
